@@ -12,11 +12,12 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 10f; // 이동속도를 위한 변수
     public Boundary boundary; // 이동 가능 영역을 위한 변수
-    private Animator animator;
+
+    private Animator animator; // 애니메이터 컴포넌트를 위한 변수
 
     void Start()
     {
-        animator = GetComponent<Animator>(); // Animator 컴포넌트를 가져옴
+        animator = GetComponent<Animator>(); // Animator 컴포넌트를 가져옵니다.
     }
 
     void Update()
@@ -24,28 +25,55 @@ public class PlayerController : MonoBehaviour
         // 이동 벡터를 초기화
         Vector3 movement = Vector3.zero;
 
-        // 키보드 입력을 받아 이동 벡터를 생성
+        // 키보드 입력을 받아 이동 벡터를 생성하고 애니메이션 트리거 설정
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             movement = new Vector3(-1, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            movement = new Vector3(1, 0, 0);
-        }
-        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            movement = new Vector3(0, 1, 0);
-            animator.SetTrigger("Up");
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            movement = new Vector3(0, -1, 0);
-            animator.SetTrigger("Down");
+            animator.SetBool("Left", true);
         }
         else
         {
-            animator.SetTrigger("Idle");
+            animator.SetBool("Left", false);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            movement = new Vector3(1, 0, 0);
+            animator.SetBool("Right", true);
+        }
+        else
+        {
+            animator.SetBool("Right", false);
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            movement = new Vector3(0, 1, 0);
+            animator.SetBool("Up", true);
+        }
+        else
+        {
+            animator.SetBool("Up", false);
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            movement = new Vector3(0, -1, 0);
+            animator.SetBool("Down", true);
+        }
+        else
+        {
+            animator.SetBool("Down", false);
+        }
+
+        // 모든 방향 입력이 없을 때 Idle 상태로 전환
+        if (movement == Vector3.zero)
+        {
+            animator.SetBool("Idle", true);
+        }
+        else
+        {
+            animator.SetBool("Idle", false);
         }
 
         // 플레이어의 현재 위치에 이동 벡터를 적용
