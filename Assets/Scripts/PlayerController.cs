@@ -1,3 +1,4 @@
+// PlayerController.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,31 +6,35 @@ using UnityEngine;
 [System.Serializable]
 public class Boundary
 {
-    public float xMin, xMax, yMin, yMax; // 이동 가능 영역 x,y좌표의 최대값과 최소값
+    public float xMin, xMax, yMin, yMax;
 }
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10f; // 이동속도를 위한 변수
-    public Boundary boundary; // 이동 가능 영역을 위한 변수
+    public float speed = 10f;
+    public Boundary boundary;
+    public GameObject arrowPrefab;
+    public Transform firePoint; // 화살이 발사되는 위치
+    public float arrowRate = 0.25f;
+    private float nextArrow;
 
-    private Animator animator; // 애니메이터 컴포넌트를 위한 변수
+    private Animator animator;
+    private Vector2 fireDirection = Vector2.right; // 화살 발사 방향
 
     void Start()
     {
-        animator = GetComponent<Animator>(); // Animator 컴포넌트를 가져옵니다.
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        // 이동 벡터를 초기화
         Vector3 movement = Vector3.zero;
 
-        // 키보드 입력을 받아 이동 벡터를 생성하고 애니메이션 트리거 설정
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             movement = new Vector3(-1, 0, 0);
             animator.SetBool("Left", true);
+            fireDirection = Vector2.left;
         }
         else
         {
@@ -40,6 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             movement = new Vector3(1, 0, 0);
             animator.SetBool("Right", true);
+            fireDirection = Vector2.right;
         }
         else
         {
@@ -50,6 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             movement = new Vector3(0, 1, 0);
             animator.SetBool("Up", true);
+            fireDirection = Vector2.up;
         }
         else
         {
@@ -60,13 +67,13 @@ public class PlayerController : MonoBehaviour
         {
             movement = new Vector3(0, -1, 0);
             animator.SetBool("Down", true);
+            fireDirection = Vector2.down;
         }
         else
         {
             animator.SetBool("Down", false);
         }
 
-        // 모든 방향 입력이 없을 때 Idle 상태로 전환
         if (movement == Vector3.zero)
         {
             animator.SetBool("Idle", true);
@@ -76,10 +83,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Idle", false);
         }
 
-        // 플레이어의 현재 위치에 이동 벡터를 적용
         transform.Translate(movement * speed * Time.deltaTime);
 
-        // 플레이어의 위치를 이동 가능 영역 범위 내로 제한
+        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextArrow)
+        {
+            nextArrow = Time.time + arrowRate;
+            FireArrow();
+        }
+
         Vector3 clampedPosition = new Vector3
         (
             Mathf.Clamp(transform.position.x, boundary.xMin, boundary.xMax),
@@ -89,4 +100,15 @@ public class PlayerController : MonoBehaviour
 
         transform.position = clampedPosition;
     }
+
+    void FireArrow()
+    {
+        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
+        ArrowMover arrowMover = arrow.GetComponent<ArrowMover>();
+        if (arrowMover != null)
+        {
+            arrowMover.SetDirection(fireDirection);
+        }
+    }
+
 }
