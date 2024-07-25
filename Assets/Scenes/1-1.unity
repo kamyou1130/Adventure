@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 110772239}
   - component: {fileID: 110772244}
   - component: {fileID: 110772245}
+  - component: {fileID: 110772246}
   m_Layer: 0
   m_Name: Boss02_A_0
   m_TagString: Untagged
@@ -279,7 +280,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.05
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -323,7 +324,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0039457083, y: -0.18150689}
+  m_Offset: {x: 0, y: -0.21}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -334,7 +335,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4712627, y: 0.63698626}
+  m_Size: {x: 0.28, y: 0.55}
   m_EdgeRadius: 0
 --- !u!212 &110772242
 SpriteRenderer:
@@ -451,6 +452,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &110772246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110772238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cd43174b21b314bbc539739985a85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &119046246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1483,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1520,7 +1534,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.9360075
+  orthographic size: 5.934211
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1545,12 +1559,28 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -0.41, z: -10}
+  m_LocalPosition: {x: -5.56, y: -0.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 387c108ae75f2354e802ae40ec92883f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 993346235}
+  offset: {x: 0, y: 0}
+  boundarySize: {x: 4, y: 1}
+  lerpSpeed: 2.5
 --- !u!1 &558356191
 GameObject:
   m_ObjectHideFlags: 0

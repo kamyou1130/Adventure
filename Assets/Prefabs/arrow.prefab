@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4973991194456139335}
   m_Layer: 0
   m_Name: arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  maxDistance: 7
