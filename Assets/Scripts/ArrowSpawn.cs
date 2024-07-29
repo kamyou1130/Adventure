@@ -15,15 +15,15 @@ public class ArrowSpawn : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position = new Vector3(player.position.x - 0.5f, player.position.y - 0.1f, 0);
+            transform.position = new Vector3(player.position.x - 0.7f, player.position.y, 0);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(player.position.x + 0.5f, player.position.y - 0.1f, 0);
+            transform.position = new Vector3(player.position.x + 0.7f, player.position.y, 0);
         }
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position = new Vector3(player.position.x, player.position.y + 0.5f, 0);
+            transform.position = new Vector3(player.position.x, player.position.y + 0.7f, 0);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
