@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7289730705039385231}
   - component: {fileID: 8135188798082305359}
   - component: {fileID: 9012595567243542554}
+  - component: {fileID: -6914169206913340464}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -137,6 +138,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
   firePoint: {fileID: 6522187754152745219}
   arrowRate: 0.25
+  multiArrow: {fileID: -6914169206913340464}
 --- !u!95 &8135188798082305359
 Animator:
   serializedVersion: 5
@@ -203,6 +205,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12, y: 0.23}
   m_EdgeRadius: 0
+--- !u!114 &-6914169206913340464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692484108444392636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec620678bef37d44b09641205937cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
+  firePoint: {fileID: 6522187754152745219}
+  arrowCount: 4
+  spreadAngle: 25
+  arrowSpeed: 13
+  maxDistance: 7
 --- !u!1 &7525203300158348929
 GameObject:
   m_ObjectHideFlags: 0

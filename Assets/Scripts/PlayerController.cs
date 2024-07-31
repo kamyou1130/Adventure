@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float arrowRate = 0.25f;
     private float nextArrow;
 
+    public MultiArrow multiArrow; // MultiArrowShooter 참조
+
     private Animator animator;
     private Vector2 fireDirection = Vector2.right; // 화살 발사 방향
     private Rigidbody2D rb;
@@ -25,7 +27,6 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        rb.bodyType = RigidbodyType2D.Kinematic; // 플레이어의 움직임을 직접 제어하기 위해 Kinematic으로 설정
     }
 
     void Update()
@@ -98,14 +99,26 @@ public class PlayerController : MonoBehaviour
 
         transform.position = clampedPosition;
 
-        // 화살 발사
+        // 기본 화살 발사
         if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextArrow)
         {
             nextArrow = Time.time + arrowRate;
-            FireArrow();
+            FireArrow(); // 단일 화살 발사
             animator.SetBool("Attack", true);
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.Z))
+        {
+            animator.SetBool("Attack", false);
+        }
+
+        // 다중 화살 발사
+        if (Input.GetKeyDown(KeyCode.X) && Time.time > nextArrow)
+        {
+            nextArrow = Time.time + arrowRate;
+            FireArrows(); // 다중 화살 발사
+            animator.SetBool("Attack", true);
+        }
+        else if (Input.GetKeyUp (KeyCode.X))
         {
             animator.SetBool("Attack", false);
         }
@@ -121,16 +134,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 트리거 충돌 처리
-    void OnTriggerEnter2D(Collider2D other)
+    void FireArrows()
     {
-        // 벽과의 충돌 처리
-        if (other.CompareTag("Wall"))
+        if (multiArrow != null)
         {
-            // 충돌 시 이동 불가 처리, 필요한 경우 다른 논리를 추가할 수 있음
-            rb.velocity = Vector2.zero;
+            multiArrow.FireArrows(fireDirection); // 현재 방향으로 다중 화살 발사
+        }
+    }
 
-            // 추가적인 로직으로, 플레이어를 충돌 지점에서 밀어내는 방식도 고려할 수 있습니다.
+    // 트리거 충돌 처리
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Wall"))
+        {
+            rb.velocity = Vector2.zero;
+            Vector2 pushBack = collision.contacts[0].normal * 0.1f;
+            rb.position += pushBack;
         }
     }
 }
