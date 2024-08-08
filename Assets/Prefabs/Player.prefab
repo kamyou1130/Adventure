@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 218342731533219470}
   - component: {fileID: 8090334219673851155}
   - component: {fileID: 238036448971414786}
-  - component: {fileID: 7289730705039385231}
-  - component: {fileID: 8135188798082305359}
   - component: {fileID: 9012595567243542554}
+  - component: {fileID: 8135188798082305359}
+  - component: {fileID: 7289730705039385231}
   - component: {fileID: -6914169206913340464}
+  - component: {fileID: 775808767739069971}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,49 +118,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7289730705039385231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2692484108444392636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2201ea0df5221f42b7dcd78219bd336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  boundary:
-    xMin: -10
-    xMax: 10
-    yMin: -10
-    yMax: 10
-  arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
-  firePoint: {fileID: 6522187754152745219}
-  arrowRate: 0.25
-  multiArrow: {fileID: -6914169206913340464}
---- !u!95 &8135188798082305359
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2692484108444392636}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b5c0dbfe07d0b64280afb24881cca6c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &9012595567243542554
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -192,7 +150,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -203,8 +161,51 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.23}
+  m_Size: {x: 0.42, y: 0.55}
   m_EdgeRadius: 0
+--- !u!95 &8135188798082305359
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692484108444392636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b5c0dbfe07d0b64280afb24881cca6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7289730705039385231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692484108444392636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2201ea0df5221f42b7dcd78219bd336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  boundary:
+    xMin: -10
+    xMax: 10
+    yMin: -10
+    yMax: 10
+  arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
+  firePoint: {fileID: 6522187754152745219}
+  arrowRate: 0.25
+  multiArrow: {fileID: -6914169206913340464}
 --- !u!114 &-6914169206913340464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +224,19 @@ MonoBehaviour:
   spreadAngle: 25
   arrowSpeed: 13
   maxDistance: 7
+--- !u!114 &775808767739069971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692484108444392636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7082c854aa8e3fb45a582a9f338960d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
 --- !u!1 &7525203300158348929
 GameObject:
   m_ObjectHideFlags: 0
