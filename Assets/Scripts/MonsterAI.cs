@@ -45,6 +45,7 @@ public class MonsterAI : MonoBehaviour
                     // 왼쪽으로 이동하는 애니메이션
                     animator.SetBool("Left", true);
                     animator.SetBool("Right", false);
+                    animator.SetBool("Idle", false);
                 }
                 else
                 {
@@ -52,6 +53,7 @@ public class MonsterAI : MonoBehaviour
                     // 오른쪽으로 이동하는 애니메이션
                     animator.SetBool("Right", true);
                     animator.SetBool("Left", false);
+                    animator.SetBool("Idle", false);
                 }
 
             }
