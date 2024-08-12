@@ -6117,7 +6117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008701086, y: -0.2953398}
+  m_Offset: {x: -0.016527772, y: -0.25285217}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6128,7 +6128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35069466, y: 0.4093204}
+  m_Size: {x: 0.42001653, y: 0.49429566}
   m_EdgeRadius: 0
 --- !u!50 &1909185126
 Rigidbody2D:
@@ -6272,7 +6272,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909185124}
   m_Enabled: 0
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
