@@ -796,8 +796,8 @@ GameObject:
   - component: {fileID: 127458769}
   - component: {fileID: 127458768}
   - component: {fileID: 127458767}
+  - component: {fileID: 127458772}
   - component: {fileID: 127458766}
-  - component: {fileID: 127458765}
   - component: {fileID: 127458764}
   - component: {fileID: 127458763}
   m_Layer: 0
@@ -841,19 +841,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!114 &127458765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127458762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9b16874e8c141d459a2ce207d1a0069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 6
 --- !u!114 &127458766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,6 +1016,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &127458772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127458762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8a20f52827d004193b477edb764d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  fillImage: {fileID: 1292352486}
 --- !u!1 &156902519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4634,6 +4635,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4883614643093089999, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883614643093089999, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883614643093089999, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5395,6 +5408,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1292352486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8746886194528916756, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
+  m_PrefabInstance: {fileID: 1150642133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1302568931
 GameObject:
   m_ObjectHideFlags: 0

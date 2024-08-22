@@ -12,7 +12,7 @@ public class ArrowMover : MonoBehaviour
     private Vector2 spawnPosition;
     // 화살이 이동할 최대 거리
     public float maxDistance = 10f;
-    public int damage = 2; // 화살의 데미지
+    public int damage = 1; // 화살의 데미지
 
     void Start()
     {
@@ -52,9 +52,14 @@ public class ArrowMover : MonoBehaviour
         if (other.CompareTag("Monster"))
         {
             MonsterHealth monsterHealth = other.GetComponent<MonsterHealth>();
+            BossHealth bossHealth = other.GetComponent<BossHealth>();
             if (monsterHealth != null)
             {
                 monsterHealth.TakeDamage(damage);
+            }
+            if (bossHealth != null)
+            {
+                bossHealth.TakeDamage(damage);
             }
             Destroy(gameObject);
         }
