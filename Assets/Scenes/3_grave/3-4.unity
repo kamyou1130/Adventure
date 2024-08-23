@@ -465,6 +465,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.xMax
+      value: 13.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.xMin
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.yMax
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.yMin
+      value: -8.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1224,7 +1240,7 @@ GameObject:
   - component: {fileID: 308111775}
   m_Layer: 0
   m_Name: Boss_01_B_0
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1356,7 +1372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e047677b8c7d3a54e978b461ea3a246b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1589146425}
   detectionRange: 8
 --- !u!195 &308111778
 NavMeshAgent:
@@ -7889,6 +7905,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1589146425 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 218342731533219470, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+  m_PrefabInstance: {fileID: 102871907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1605208858
 GameObject:
   m_ObjectHideFlags: 0
