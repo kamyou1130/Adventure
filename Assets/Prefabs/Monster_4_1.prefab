@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1671685249493719331}
   - component: {fileID: 5529097019759486625}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

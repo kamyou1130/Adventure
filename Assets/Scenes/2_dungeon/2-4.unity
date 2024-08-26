@@ -4067,6 +4067,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.xMax
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.xMin
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.yMax
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: boundary.yMin
+      value: -8.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
