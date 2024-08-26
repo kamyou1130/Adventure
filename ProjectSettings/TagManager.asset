@@ -7,6 +7,7 @@ TagManager:
   - Arrow
   - Wall
   - Monster
+  - Heal
   layers:
   - Default
   - TransparentFX

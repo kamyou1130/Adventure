@@ -310,6 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
+  healPrefab: {fileID: 8593702633009570832, guid: 18732a71013ad5d4a8380a30a90f48a0, type: 3}
+  dropChance: 1
 --- !u!95 &2995546903385966831
 Animator:
   serializedVersion: 5

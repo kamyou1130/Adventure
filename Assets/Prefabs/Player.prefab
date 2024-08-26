@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   fillImage: {fileID: 0}
+  healAmount: 1
 --- !u!1 &6236062507966531803
 GameObject:
   m_ObjectHideFlags: 0

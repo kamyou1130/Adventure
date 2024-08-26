@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rb;
 
     public Image fillImage; // 채워지는 이미지
+    public int healAmount = 1; // 회복되는 체력량
 
     void Start()
     {
@@ -44,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
         // 플레이어 사망 처리
         animator.SetBool("Die", true);
         Debug.Log("Player Died!");
-        // 여기에 게임 오버 처리 등을 추가
         rb.simulated = false;
     }
 
@@ -57,11 +57,23 @@ public class PlayerHealth : MonoBehaviour
     public void Heal(int amount)
     {
         currentHealth += amount;
+
+        // 체력이 최대 체력을 초과하지 않도록 제한
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
+
         UpdateHealthUI(); // 체력 바 업데이트
         Debug.Log("Player Health: " + currentHealth);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Heal"))
+        {
+            Heal(healAmount); // 지정된 양만큼 체력 회복
+            Destroy(other.gameObject); // 회복 오브젝트 제거
+        }
     }
 }
