@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
+  healPrefab: {fileID: 8593702633009570832, guid: 18732a71013ad5d4a8380a30a90f48a0, type: 3}
+  dropChance: 0.3
 --- !u!50 &4509994896048062846
 Rigidbody2D:
   serializedVersion: 4

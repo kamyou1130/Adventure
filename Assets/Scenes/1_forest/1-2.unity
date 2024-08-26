@@ -2778,6 +2778,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7364953642625788079, guid: 97ddcc8bb1df74289829a366efdf2f47, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7408854462929246106, guid: 97ddcc8bb1df74289829a366efdf2f47, type: 3}
       propertyPath: m_SortingOrder
       value: 2
