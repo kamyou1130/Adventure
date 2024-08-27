@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 480204988464837709}
   - component: {fileID: 2110458741390195092}
   - component: {fileID: 9182151768884883102}
-  - component: {fileID: 2979609810185706867}
+  - component: {fileID: 5011666166107704765}
   - component: {fileID: 7092821569170763310}
   - component: {fileID: 2378251161877772098}
   - component: {fileID: 6811068222316512278}
@@ -113,7 +113,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2979609810185706867
+--- !u!114 &5011666166107704765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,11 +122,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3527496821977318036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e047677b8c7d3a54e978b461ea3a246b, type: 3}
+  m_Script: {fileID: 11500000, guid: 433ab4eec4a6bc8428e3f724a52a6ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   detectionRange: 8
+  attackRange: 3
 --- !u!114 &7092821569170763310
 MonoBehaviour:
   m_ObjectHideFlags: 0
