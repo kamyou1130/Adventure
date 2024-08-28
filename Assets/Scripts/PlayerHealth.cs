@@ -45,7 +45,12 @@ public class PlayerHealth : MonoBehaviour
         // 플레이어 사망 처리
         animator.SetBool("Die", true);
         Debug.Log("Player Died!");
+
+        // Rigidbody를 비활성화
         rb.simulated = false;
+
+        // 플레이어 컨트롤 스크립트 비활성화
+        GetComponent<PlayerController>().enabled = false; // PlayerController 스크립트 비활성화
     }
 
     void UpdateHealthUI()
