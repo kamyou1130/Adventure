@@ -1,26 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 10;
-    private int currentHealth;
+    public int currentHealth; // 체력 상태
     private Animator animator;
     private Rigidbody2D rb;
 
-    public Image fillImage; // 채워지는 이미지
+    public Image fillImage; // 체력 바에 사용할 채워지는 이미지
     public int healAmount = 1; // 회복되는 체력량
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
 
-        // 초기 체력 바 설정
+        // 체력 초기화
+        currentHealth = maxHealth;
+
+        // 체력 바 UI 업데이트
         UpdateHealthUI();
+
+        // 이전 씬에서 저장된 체력 정보 로드
+        LoadHealth();
     }
 
     public void TakeDamage(int damage)
@@ -28,57 +31,56 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
 
-        UpdateHealthUI(); // 체력 바 업데이트
+        UpdateHealthUI();
 
         if (currentHealth <= 0)
         {
             Die();
         }
-        else
-        {
-            Debug.Log("Player Health: " + currentHealth);
-        }
     }
 
     void Die()
     {
-        // 플레이어 사망 처리
         animator.SetBool("Die", true);
-        Debug.Log("Player Died!");
-
-        // Rigidbody를 비활성화
         rb.simulated = false;
-
-        // 플레이어 컨트롤 스크립트 비활성화
-        GetComponent<PlayerController>().enabled = false; // PlayerController 스크립트 비활성화
+        GetComponent<PlayerController>().enabled = false;
     }
 
     void UpdateHealthUI()
     {
         float healthPercent = (float)currentHealth / maxHealth;
-        fillImage.fillAmount = healthPercent; // fillAmount 사용
+        fillImage.fillAmount = healthPercent;
     }
 
     public void Heal(int amount)
     {
         currentHealth += amount;
-
-        // 체력이 최대 체력을 초과하지 않도록 제한
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
-
-        UpdateHealthUI(); // 체력 바 업데이트
-        Debug.Log("Player Health: " + currentHealth);
+        UpdateHealthUI();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Heal"))
         {
-            Heal(healAmount); // 지정된 양만큼 체력 회복
-            Destroy(other.gameObject); // 회복 오브젝트 제거
+            Heal(healAmount);
+            Destroy(other.gameObject);
         }
+    }
+
+    // 체력 저장
+    public void SaveHealth()
+    {
+        PlayerData.Instance.SavePlayerHealth(currentHealth);
+    }
+
+    // 체력 로드
+    public void LoadHealth()
+    {
+        currentHealth = PlayerData.Instance.LoadPlayerHealth();
+        UpdateHealthUI();
     }
 }

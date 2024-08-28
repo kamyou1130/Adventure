@@ -3,12 +3,12 @@ using UnityEngine.AI;
 
 public class MonsterAI_C : MonoBehaviour
 {
-    public Transform player;  // 플레이어의 Transform
     public float detectionRange = 10.0f;  // 몬스터가 플레이어를 인식하는 범위
     public float attackRange = 3.0f;  // 공격 애니메이션을 재생할 거리
 
     private NavMeshAgent navMeshAgent;
     private Animator animator;
+    private Transform player;  // 플레이어의 Transform을 저장할 변수
 
     void Start()
     {
@@ -18,6 +18,13 @@ public class MonsterAI_C : MonoBehaviour
         agent.updateUpAxis = false;
 
         animator = GetComponent<Animator>();
+
+        // Player 태그를 가진 오브젝트를 찾아서 그 Transform을 저장합니다.
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
     }
 
     void Update()

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7289730705039385231}
   - component: {fileID: -6914169206913340464}
   - component: {fileID: 775808767739069971}
+  - component: {fileID: 4761637788840463471}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -199,8 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   boundary:
-    xMin: -10
-    xMax: 10
+    xMin: -20
+    xMax: 20
     yMin: -10
     yMax: 10
   arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
@@ -238,8 +239,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  currentHealth: 0
   fillImage: {fileID: 0}
   healAmount: 1
+--- !u!114 &4761637788840463471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692484108444392636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627aec2f5e43a8c43866f26506d17895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6236062507966531803
 GameObject:
   m_ObjectHideFlags: 0
