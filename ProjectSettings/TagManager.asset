@@ -9,6 +9,8 @@ TagManager:
   - Monster
   - Heal
   - Portal
+  - Canvas
+  - BossHeal
   layers:
   - Default
   - TransparentFX

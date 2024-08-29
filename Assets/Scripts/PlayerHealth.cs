@@ -69,6 +69,12 @@ public class PlayerHealth : MonoBehaviour
             Heal(healAmount);
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("BossHeal"))
+        {
+            Heal(10);
+            Destroy(other.gameObject);
+        }
     }
 
     // 체력 저장

@@ -7,6 +7,9 @@ public class BossHealth : MonoBehaviour
 {
     public int maxHealth = 20; // 보스의 최대 체력
     private int currentHealth;
+    private bool isDead = false;
+
+    public GameObject healPrefab; // 회복 오브젝트 프리팹
 
     public Image fillImage; // 보스 체력 바에 사용할 채워지는 이미지
     void Start()
@@ -31,7 +34,7 @@ public class BossHealth : MonoBehaviour
 
         UpdateHealthUI(); // 체력 바 업데이트
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
             Die();
         }
@@ -43,8 +46,13 @@ public class BossHealth : MonoBehaviour
 
     void Die()
     {
+
+        if (isDead) return;
+
+        isDead = true;
         // 보스 사망 처리
         Debug.Log("Boss Died!");
+        DropHealItem(); 
 
         // UI도 함께 삭제하거나 비활성화
         if (fillImage != null)
@@ -60,5 +68,10 @@ public class BossHealth : MonoBehaviour
     {
         float healthPercent = (float)currentHealth / maxHealth;
         fillImage.fillAmount = healthPercent; // fillAmount 사용
+    }
+
+    void DropHealItem()
+    {
+        Instantiate(healPrefab, transform.position, Quaternion.identity);
     }
 }

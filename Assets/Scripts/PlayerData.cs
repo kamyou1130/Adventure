@@ -16,7 +16,7 @@ public class PlayerData : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // 중복된 인스턴스가 있을 경우 삭제
         }
     }
 

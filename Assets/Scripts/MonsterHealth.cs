@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MonsterHealth : MonoBehaviour
 {
     public int maxHealth = 10;
     private int currentHealth;
+    private bool isDead = false;
 
     public GameObject healPrefab; // 회복 오브젝트 프리팹
     public float dropChance = 0.3f; // 회복 오브젝트 생성 확률 (30%)
@@ -18,7 +20,7 @@ public class MonsterHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
             Die();
         }
@@ -26,6 +28,9 @@ public class MonsterHealth : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
+
+        isDead = true;
         Debug.Log("Monster Died!");
         DropHealItem(); // 회복 오브젝트 생성 시도
         Destroy(gameObject); // 몬스터 오브젝트 삭제

@@ -35,4 +35,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2_dungeon/2-4.unity
     guid: 35912d9f0094348208ecbfff78efc190
+  - enabled: 1
+    path: Assets/Scenes/3_grave/3-1.unity
+    guid: 584bc2bd454e3407d809bf190ed2f844
+  - enabled: 1
+    path: Assets/Scenes/3_grave/3-2.unity
+    guid: 50c2da363e72c4763a0e40b6de7e5e3f
+  - enabled: 1
+    path: Assets/Scenes/3_grave/3-3.unity
+    guid: 039b9972b60934abea0205a0d8d4871c
+  - enabled: 1
+    path: Assets/Scenes/3_grave/3-4.unity
+    guid: d4a497b0d38944b2ebf598fb7b7d08ad
   m_configObjects: {}
