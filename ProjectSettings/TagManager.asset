@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Monster
   - Heal
+  - Portal
   layers:
   - Default
   - TransparentFX
