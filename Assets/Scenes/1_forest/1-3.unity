@@ -14887,7 +14887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 8376123788838020774, guid: 9819ca71c563bbc4791ee252fdeecafb, type: 3}
-  portalPosition: {x: 13.5, y: -2.7, z: 0}
+  portalPosition: {x: 13.5, y: -2.2, z: 0}
   nextSceneName: 1-4
 --- !u!4 &738705521
 Transform:
