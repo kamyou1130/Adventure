@@ -12,6 +12,7 @@ public class ArrowMover : MonoBehaviour
     private Vector2 spawnPosition;
     // 화살이 이동할 최대 거리
     public float maxDistance = 10f;
+    public float FireArrowmaxDistance = 10f;
     public int damage = 1; // 화살의 데미지
 
     void Start()
@@ -41,7 +42,11 @@ public class ArrowMover : MonoBehaviour
         float distanceTravelled = Vector2.Distance(transform.position, spawnPosition);
 
         // 최대 거리 초과 시 화살 제거
-        if (distanceTravelled > maxDistance)
+        if (distanceTravelled > maxDistance && !CompareTag("FireArrow"))
+        {
+            Destroy(gameObject);
+        }
+        if (distanceTravelled > FireArrowmaxDistance && CompareTag("FireArrow"))
         {
             Destroy(gameObject);
         }
@@ -61,7 +66,10 @@ public class ArrowMover : MonoBehaviour
             {
                 bossHealth.TakeDamage(damage);
             }
-            Destroy(gameObject);
+            if(!CompareTag("FireArrow"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

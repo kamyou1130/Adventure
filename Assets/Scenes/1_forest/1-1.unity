@@ -847,6 +847,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: arrowRate
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: bigArrowRate
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
       propertyPath: boundary.xMax
       value: 20
       objectReference: {fileID: 0}
@@ -861,6 +869,10 @@ PrefabInstance:
     - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
       propertyPath: boundary.yMin
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289730705039385231, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
+      propertyPath: multiArrowRate
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9012595567243542554, guid: ba12a314becf6a34eaf71498f248deb9, type: 3}
       propertyPath: m_IsTrigger

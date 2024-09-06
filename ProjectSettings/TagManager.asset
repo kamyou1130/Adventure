@@ -11,6 +11,7 @@ TagManager:
   - Portal
   - Canvas
   - BossHeal
+  - FireArrow
   layers:
   - Default
   - TransparentFX

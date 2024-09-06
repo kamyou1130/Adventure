@@ -205,8 +205,10 @@ MonoBehaviour:
     yMin: -10
     yMax: 10
   arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
+  bigArrowPrefab: {fileID: 1651278905184689325, guid: 7ebf2cdedca0bb64799cc8961beccd8f, type: 3}
   firePoint: {fileID: 6522187754152745219}
   arrowRate: 0.25
+  bigArrowRate: 1
   multiArrow: {fileID: -6914169206913340464}
 --- !u!114 &-6914169206913340464
 MonoBehaviour:
