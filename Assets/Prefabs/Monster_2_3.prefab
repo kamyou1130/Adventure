@@ -118,7 +118,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.51, y: 3.78, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5923338519914090764}
@@ -211,7 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 8
-  attackRange: 3
+  attackRange: 5
+  projectilePrefab: {fileID: 640058533845895675, guid: 74a28b67667b50e45918ac2e90ce6dfd, type: 3}
+  firePoint: {fileID: 4908322498760694088}
+  fireRate: 1.5
 --- !u!114 &1550417465712154934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +334,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &7548921773526935927

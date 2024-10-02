@@ -217,7 +217,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.3000002
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!50 &735785675392709091
@@ -308,7 +308,7 @@ MonoBehaviour:
   attackRange: 5
   projectilePrefab: {fileID: 6027737820842718487, guid: 1ec4f4bb86edd3544b004e3dc94e47d0, type: 3}
   firePoint: {fileID: 3399180243907187902}
-  fireRate: 1
+  fireRate: 1.5
 --- !u!114 &6538012914429091583
 MonoBehaviour:
   m_ObjectHideFlags: 0

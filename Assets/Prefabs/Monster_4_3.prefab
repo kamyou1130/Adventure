@@ -127,9 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 8
-  attackRange: 3
+  attackRange: 5
   projectilePrefab: {fileID: 592434919815177484, guid: 8dfdb4e816507480cbca58ed58b7b8d9, type: 3}
   firePoint: {fileID: 3615893630350562287}
+  fireRate: 1.5
 --- !u!114 &7092821569170763310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +250,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.8000004
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &5715778079674201873
