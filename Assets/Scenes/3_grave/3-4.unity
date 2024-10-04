@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 308111780}
   - component: {fileID: 308111779}
   - component: {fileID: 308111778}
-  - component: {fileID: 308111777}
+  - component: {fileID: 308111781}
   - component: {fileID: 308111776}
   - component: {fileID: 308111775}
   m_Layer: 0
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8a20f52827d004193b477edb764d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 30
   healPrefab: {fileID: 3933788475647160386, guid: f9a19266af6321e4fa88e46c1756e587, type: 3}
   fillImage: {fileID: 1233986189}
 --- !u!114 &308111776
@@ -1460,20 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9666f37ce16d4634d9a22cde25aaef42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
---- !u!114 &308111777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308111771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e047677b8c7d3a54e978b461ea3a246b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRange: 8
+  damage: 3
 --- !u!195 &308111778
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1484,7 +1471,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1493,7 +1480,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.5600007
-  m_BaseOffset: 0.8
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!61 &308111779
@@ -1568,6 +1555,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &308111781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308111771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67cf45eab4c4ec3418f536e2742879e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  attackRange: 8
+  dashSpeed: 10
+  originalSpeed: 3
+  dashDuration: 2
+  dashCooldown: 9.5
+  idleDuration: 2.5
 --- !u!1 &323189717
 GameObject:
   m_ObjectHideFlags: 0
