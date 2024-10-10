@@ -1,24 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
     public int maxHealth = 20; // 보스의 최대 체력
-    private int currentHealth;
+    public int currentHealth;
     private bool isDead = false;
 
     public GameObject healPrefab; // 회복 오브젝트 프리팹
-
     public Image fillImage; // 보스 체력 바에 사용할 채워지는 이미지
+
+    // 보스 사망 이벤트 정의
+    public event Action OnBossDeath;
+
     void Start()
     {
         if (fillImage != null)
         {
             currentHealth = maxHealth;
-
-            // 초기 체력 바 설정
             UpdateHealthUI();
         }
         else
@@ -46,13 +46,11 @@ public class BossHealth : MonoBehaviour
 
     void Die()
     {
-
         if (isDead) return;
 
         isDead = true;
-        // 보스 사망 처리
         Debug.Log("Boss Died!");
-        DropHealItem(); 
+        DropHealItem();
 
         // UI도 함께 삭제하거나 비활성화
         if (fillImage != null)
@@ -60,9 +58,11 @@ public class BossHealth : MonoBehaviour
             fillImage.gameObject.SetActive(false);
         }
 
+        // 사망 이벤트 발생
+        OnBossDeath?.Invoke();
+
         Destroy(gameObject);
     }
-
 
     void UpdateHealthUI()
     {
