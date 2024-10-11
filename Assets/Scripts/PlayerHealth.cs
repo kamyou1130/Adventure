@@ -25,7 +25,24 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
 
         // 이전 씬에서 저장된 체력 정보 로드
-        LoadHealth();
+        if (SceneManager.GetActiveScene().name == "1-1" || SceneManager.GetActiveScene().name == "2-1" ||
+            SceneManager.GetActiveScene().name == "3-1" || SceneManager.GetActiveScene().name == "4-1")
+        {
+            currentHealth = maxHealth;  // 체력을 초기화
+            UpdateHealthUI();  // UI 업데이트
+        }
+
+        LoadHealth(); // 이전 체력 로드 (필요한 경우)
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth; // 체력을 최대 체력으로 초기화
+        UpdateHealthUI(); // UI 업데이트
+
+        animator.SetBool("Die", false); // 죽음 애니메이션 비활성화
+        rb.simulated = true; // 물리적 동작 활성화
+        GetComponent<PlayerController>().enabled = true; // 플레이어 컨트롤러 활성화
     }
 
     public void TakeDamage(int damage)

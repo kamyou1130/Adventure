@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,9 +35,28 @@ public class DeathUIController : MonoBehaviour
     // Restart 버튼이 눌렸을 때 호출
     public void OnRestartButtonPressed()
     {
+        deathUIPrefab.SetActive(false);
+
+        // 씬 초기화
+        ResetScene();
         // 현재 테마의 첫 씬으로 재시작
         Debug.Log("Restarting scene: " + GetThemeStartScene());
         SceneManager.LoadScene(GetThemeStartScene());
+    }
+
+    void ResetScene()
+    {
+        // 각 씬의 오브젝트들을 초기 상태로 리셋
+        foreach (MonsterHealth monster in FindObjectsOfType<MonsterHealth>())
+        {
+            monster.ResetMonster();  // 몬스터 초기 상태로 복원
+        }
+
+        PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.ResetHealth();  // 플레이어 체력 초기화 메서드 호출
+        }
     }
 
     // Exit 버튼이 눌렸을 때 호출
@@ -49,8 +69,9 @@ public class DeathUIController : MonoBehaviour
     // 현재 테마의 첫 씬 이름 반환
     public string GetThemeStartScene()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
         // 테마에 따라 첫 씬 이름 반환
-        switch (currentThemeFirstScene)
+        switch (currentScene)
         {
             case "1-1":
             case "1-2":
