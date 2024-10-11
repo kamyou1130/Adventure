@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; // 씬 전환을 위해 추가
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Image fillImage; // 체력 바에 사용할 채워지는 이미지
     public int healAmount = 1; // 회복되는 체력량
+    public GameObject DeathPanel;
 
     void Start()
     {
@@ -44,6 +46,8 @@ public class PlayerHealth : MonoBehaviour
         animator.SetBool("Die", true);
         rb.simulated = false;
         GetComponent<PlayerController>().enabled = false;
+
+        DeathPanel.SetActive(true); // 게임 죽음 패널 활성화
     }
 
     void UpdateHealthUI()

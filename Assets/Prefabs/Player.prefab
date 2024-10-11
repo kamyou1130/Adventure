@@ -199,16 +199,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  boundary:
-    xMin: -20
-    xMax: 20
-    yMin: -10
-    yMax: 10
   arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
   bigArrowPrefab: {fileID: 1651278905184689325, guid: 7ebf2cdedca0bb64799cc8961beccd8f, type: 3}
   firePoint: {fileID: 6522187754152745219}
-  arrowRate: 0.25
-  bigArrowRate: 1
+  arrowRate: 0.5
+  multiArrowRate: 5
+  bigArrowRate: 10
   multiArrow: {fileID: -6914169206913340464}
 --- !u!114 &-6914169206913340464
 MonoBehaviour:
@@ -224,8 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 5377920034904634685, guid: bea2b9b7d7596324f94c9b689843f26e, type: 3}
   firePoint: {fileID: 6522187754152745219}
-  arrowCount: 4
-  spreadAngle: 25
+  arrowCount: 3
+  spreadAngle: 20
   arrowSpeed: 13
   maxDistance: 7
 --- !u!114 &775808767739069971
