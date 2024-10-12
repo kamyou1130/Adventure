@@ -3778,7 +3778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8a20f52827d004193b477edb764d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
+  maxHealth: 30
   currentHealth: 0
   healPrefab: {fileID: 3933788475647160386, guid: f9a19266af6321e4fa88e46c1756e587, type: 3}
   fillImage: {fileID: 1966282326}
@@ -3795,7 +3795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 9
-  attackRange: 7
+  attackRange: 8
   fireRate: 5
   projectilePrefab: {fileID: 8255827974861787063, guid: ba98114d8409bcc418a21fe149ddd888, type: 3}
   firePoint: {fileID: 103122947}

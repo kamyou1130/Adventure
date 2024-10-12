@@ -305,10 +305,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 8
-  attackRange: 5
+  attackRange: 6
   projectilePrefab: {fileID: 6592517014908211437, guid: 881d82b8dcefb4740a0fe94d30f06621, type: 3}
   firePoint: {fileID: 8034913740593368425}
-  fireRate: 1.5
+  fireRate: 1
 --- !u!114 &4485907179550835942
 MonoBehaviour:
   m_ObjectHideFlags: 0
