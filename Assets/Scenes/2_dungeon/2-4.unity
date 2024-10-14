@@ -3592,7 +3592,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3778,7 +3778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8a20f52827d004193b477edb764d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 25
   currentHealth: 0
   healPrefab: {fileID: 3933788475647160386, guid: f9a19266af6321e4fa88e46c1756e587, type: 3}
   fillImage: {fileID: 1966282326}
