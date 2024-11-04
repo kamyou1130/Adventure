@@ -16,10 +16,15 @@ public class MonsterAI_C : MonoBehaviour
     private bool isAttacking = false;  // 공격 상태 플래그
     private float nextFireTime = 0f;  // 다음 발사 가능 시간
 
+    public AudioClip shotSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         var agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
+
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
@@ -162,6 +167,11 @@ public class MonsterAI_C : MonoBehaviour
 
                 // velocity로 발사
                 rb.velocity = direction * 5f;  // 필요 시 발사 속도 조정 가능
+
+                if(shotSound != null)
+                {
+                    audioSource.PlayOneShot(shotSound);
+                }
             }
             else
             {

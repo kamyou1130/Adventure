@@ -10,15 +10,25 @@ public class MonsterHealth : MonoBehaviour
     public GameObject healPrefab; // 회복 오브젝트 프리팹
     public float dropChance = 0.3f; // 회복 오브젝트 생성 확률 (30%)
 
+    public AudioClip hitSound;
+    private AudioSource audioSource;
+
     // Start에서 초기화된 health 값을 매번 새로 세팅할 수 있도록 수정
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         ResetMonster();
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        if (hitSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
+
         if (currentHealth <= 0 && !isDead)
         {
             Die();

@@ -11,11 +11,16 @@ public class BossHealth : MonoBehaviour
     public GameObject healPrefab; // 회복 오브젝트 프리팹
     public Image fillImage; // 보스 체력 바에 사용할 채워지는 이미지
 
+    public AudioClip BossHitSound;
+    private AudioSource audioSource;
+
     // 보스 사망 이벤트 정의
     public event Action OnBossDeath;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (fillImage != null)
         {
             currentHealth = maxHealth;
@@ -31,6 +36,11 @@ public class BossHealth : MonoBehaviour
     {
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
+
+        if (BossHitSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(BossHitSound);
+        }
 
         UpdateHealthUI(); // 체력 바 업데이트
 

@@ -18,6 +18,9 @@ public class BossAI_3 : MonoBehaviour
     private bool isDashing = false; // 돌진 상태
     private float nextDashTime = 0f; // 다음 돌진 가능 시간
 
+    public AudioClip AttackSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -25,6 +28,7 @@ public class BossAI_3 : MonoBehaviour
         navMeshAgent.updateUpAxis = false;
 
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         // "Player" 태그를 가진 오브젝트를 찾아서 player 변수에 할당
         player = GameObject.FindGameObjectWithTag("Player");
@@ -96,6 +100,11 @@ public class BossAI_3 : MonoBehaviour
     {
         isDashing = true;
         animator.SetBool("Attack", true); // 공격 애니메이션 재생
+
+        if (AttackSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(AttackSound);
+        }
 
         // 1초 동안 Idle 상태로 대기
         yield return new WaitForSeconds(idleDuration);

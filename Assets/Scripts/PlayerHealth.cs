@@ -13,10 +13,15 @@ public class PlayerHealth : MonoBehaviour
     public int healAmount = 1; // 회복되는 체력량
     public GameObject DeathPanel;
 
+    public AudioClip hitSound;
+    public AudioClip healSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
 
         // 체력 초기화
         currentHealth = maxHealth;
@@ -49,6 +54,11 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
+
+        if (hitSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
 
         UpdateHealthUI();
 
@@ -87,6 +97,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("Heal"))
         {
+            if(healSound != null)
+            {
+                audioSource.PlayOneShot(healSound);
+            }
             Heal(healAmount);
             Destroy(other.gameObject);
         }
