@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.Keypad4))
         {
             movement = new Vector3(-1, 0, 0);
             animator.SetBool("Left", true);
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Left", false);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.Keypad6))
         {
             movement = new Vector3(1, 0, 0);
             animator.SetBool("Right", true);
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Right", false);
         }
 
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Keypad8))
         {
             movement = new Vector3(0, 1, 0);
             animator.SetBool("Up", true);
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Up", false);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Keypad5))
         {
             movement = new Vector3(0, -1, 0);
             animator.SetBool("Down", true);
