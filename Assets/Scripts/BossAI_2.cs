@@ -16,6 +16,9 @@ public class BossAI_2 : MonoBehaviour
     private GameObject player;  // 플레이어를 나타내는 GameObject
     private float nextFireTime = 0f; // 다음 투사체 발사 시간
 
+    public AudioClip shotSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -24,6 +27,8 @@ public class BossAI_2 : MonoBehaviour
 
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -103,6 +108,11 @@ public class BossAI_2 : MonoBehaviour
     {
         float angleStep = 360f / projectileCount;
         float currentAngle = 0f;
+
+        if (shotSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(shotSound);
+        }
 
         for (int i = 0; i < projectileCount; i++)
         {

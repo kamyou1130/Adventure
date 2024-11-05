@@ -21838,7 +21838,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 225546098245341653, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 952275432360132091, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -21899,6 +21899,18 @@ PrefabInstance:
     - target: {fileID: 1874234141358252189, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076154577202513038, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076154577202513038, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 388da6a73fbfa4d429a6f7f9f326e0a0, type: 3}
+    - target: {fileID: 2076154577202513038, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2089491436065288957, guid: d5bc0a8f88c373b4e87ca721e08d99fe, type: 3}
       propertyPath: m_IsActive

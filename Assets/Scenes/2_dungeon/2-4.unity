@@ -3803,6 +3803,7 @@ MonoBehaviour:
   firePoint: {fileID: 103122947}
   projectileSpeed: 8
   projectileCount: 20
+  shotSound: {fileID: 8300000, guid: b18c67dba984525458583df6aa0d0f8c, type: 3}
 --- !u!82 &550837052
 AudioSource:
   m_ObjectHideFlags: 0

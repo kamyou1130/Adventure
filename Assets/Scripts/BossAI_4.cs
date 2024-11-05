@@ -15,6 +15,9 @@ public class BossAI_4 : MonoBehaviour
     private GameObject player;  // 플레이어를 나타내는 GameObject
     private float nextFireTime = 0f; // 다음 투사체 발사 시간
 
+    public AudioClip shotSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -23,6 +26,7 @@ public class BossAI_4 : MonoBehaviour
 
         animator = GetComponent<Animator>();
 
+        audioSource = GetComponent<AudioSource>();
         // "Player" 태그를 가진 오브젝트를 찾아서 player 변수에 할당
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -132,6 +136,11 @@ public class BossAI_4 : MonoBehaviour
     {
         // 투사체 생성
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+
+        if (shotSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(shotSound);
+        }
 
         // 투사체 이동 및 튕김 처리 스크립트 설정
         Projectile_boss4 projectileScript = projectile.GetComponent<Projectile_boss4>();

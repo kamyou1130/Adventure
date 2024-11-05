@@ -963,6 +963,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8109032539233421136, guid: 6e4998c44f8930b47836deb88616fa06, type: 3}
   firePoint: {fileID: 1133659930}
   projectileSpeed: 7
+  shotSound: {fileID: 8300000, guid: 14a50c58277610e4ca2b43d6c89f21a1, type: 3}
 --- !u!82 &127458774
 AudioSource:
   m_ObjectHideFlags: 0
