@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     public float multiArrowRate = 1f;
     public float bigArrowRate = 1f;
+
+    public Image multiArrowCooldownImage; // X 스킬의 쿨다운 UI 이미지
+    public Image bigArrowCooldownImage;   // C 스킬의 쿨다운 UI 이미지
 
     private float nextArrow;
     private float nextmultiArrow;
@@ -49,6 +53,13 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
+    {
+        HandleMovement();
+        HandleAttacks();
+        UpdateCooldownUI();
+    }
+
+    void HandleMovement()
     {
         Vector3 movement = Vector3.zero;
 
@@ -106,7 +117,10 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.Translate(movement * speed * Time.deltaTime);
+    }
 
+    void HandleAttacks()
+    {
         string currentScene = SceneManager.GetActiveScene().name;
 
         if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextArrow)
@@ -140,6 +154,19 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.C))
         {
             animator.SetBool("Attack", false);
+        }
+    }
+
+    void UpdateCooldownUI()
+    {
+        if (multiArrowCooldownImage != null)
+        {
+            multiArrowCooldownImage.fillAmount = Mathf.Clamp01((nextmultiArrow - Time.time) / multiArrowRate);
+        }
+
+        if (bigArrowCooldownImage != null)
+        {
+            bigArrowCooldownImage.fillAmount = Mathf.Clamp01((nextBigArrow - Time.time) / bigArrowRate);
         }
     }
 
